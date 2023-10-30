@@ -6,7 +6,7 @@ C_EXTENSION=.c
 OBJ_EXTENSION=.o
 CFLAGS=-c -Wall -Werror -fpic
 LDFLAGS=-shared
-LIB=libjetgpio.so
+LIB=libjetspi.so
 LIBS=-lpthread -lrt
 
 all: step1 step2 step3
@@ -26,7 +26,7 @@ step4:
 	install -m 0755 $(LIB) /usr/lib
 	install -m 0644 jetgpio.h /usr/include
 	ldconfig
-	ldconfig -p | grep libjetgpio.so
+	ldconfig -p | grep libjetspi.so
 	@if [ $(MODEL) == orin ]; then\
 		cp ./scripts/pwm_enabler.sh /etc/systemd/system;\
 		cp ./scripts/pwm_enable.service /etc/systemd/system;\

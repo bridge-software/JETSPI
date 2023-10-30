@@ -2565,7 +2565,7 @@ int spiClose(unsigned handle){
   return 0;
 }
 
-int spiXfer(unsigned handle, char *txBuf, char *rxBuf, unsigned len){
+int spiXfer(unsigned handle, unsigned char *txBuf, unsigned char *rxBuf, unsigned len){
     
   int ret;
   struct spi_ioc_transfer tr;

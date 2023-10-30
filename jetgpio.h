@@ -632,7 +632,7 @@ int spiClose(unsigned handle);
  * @code spiClose(SPI_init); //closing previously opened spi port with handle SPI_init @endcode
 */
 
-int spiXfer(unsigned handle, char *txBuf, char *rxBuf, unsigned len);
+int spiXfer(unsigned handle, unsigned char *txBuf, unsigned char *rxBuf, unsigned len);
 /**<
  * @brief This function transfers count bytes of data from txBuf to the SPI device associated with the handle. Simultaneously len words of data are read from the device and placed in rxBuf.
  * @param handle >=0, as returned by a call to [*spiOpen*]
