@@ -1,0 +1,4 @@
+*.so
+*.o
+get_chip_id
+hardware
