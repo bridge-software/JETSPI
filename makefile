@@ -8,6 +8,7 @@ CFLAGS=-c -Wall -Werror -fpic
 LDFLAGS=-shared
 LIB=libjetspi.so
 LIBS=-lpthread -lrt
+FILENAME="installationCompleted.txt"
 
 all: check_sudoers start_spidev step1 step2 step3
 
@@ -50,6 +51,8 @@ step4:
 		systemctl enable pwm_enable.service;\
 		systemctl start pwm_enable.service;\
 	fi
+	
+	echo "Installation completed" > "$(FILENAME)"
 
 step5:
 	$(eval MODEL := $(shell systemctl is-enabled pwm_enable.service 2>/dev/null))

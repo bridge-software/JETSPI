@@ -1,8 +1,8 @@
 #!/bin/bash
 
-filename="installationCompleted.txt"
+FILENAME="installationCompleted.txt"
 
-if [ -e "$filename" ]; then
+if [ -e "$FILENAME" ]; then
     echo "The installation is completed."
 else
 
@@ -16,7 +16,6 @@ else
 
     sudo make username=$USER
     sudo make install username=$USER
-    echo "Installation completed" > "$filename"
 
 fi
 
